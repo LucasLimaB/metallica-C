@@ -1,0 +1,283 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+
+void tabuleiro (char casas2[3][3]){
+    system("cls");
+    printf("\t %c | %c | %c\n", casas2[0][0],casas2[0][1],casas2[0][2]);
+    printf("\t-----------\n");
+    printf("\t %c | %c | %c\n", casas2[1][0],casas2[1][1],casas2[1][2]);
+    printf("\t-----------\n");
+    printf("\t %c | %c | %c\n", casas2[2][0],casas2[2][1],casas2[2][2]);
+}
+
+
+    struct Perguntas {
+       char texto[600];
+       char resposta_correta;
+       int pontos;
+    };
+
+    struct Quiz {
+        struct Perguntas perguntas[20];
+        char resposta[20];
+    };
+    main ()
+    {
+
+    // ==============================
+    //||  jogo da velha ||
+
+    char casas [3][3] = { {'1','2','3'},
+                          {'4','5','6'},
+                          {'7','8','9'}, };
+
+
+        char resposta_jogoDaVelha;
+        int cont_jogadas, l, c;
+        int vez = 0;
+    // ==============================
+    //|| Struct ||
+
+        int opcao=0;
+        int i,j;
+        int totalperguntas = 0;
+        int totalpontos;
+        char nome[50];
+    //===============================
+    // || Ponteiros ||
+
+        char *pnome = &nome;
+        int *ptotalpontos = &totalpontos;
+
+     //===============================
+
+  while (opcao!=10)
+  {
+         system("cls");
+         printf("\n1- Como surgiu a banda");
+         printf("\n2- O porque do nome Metallica");
+         printf("\n3- Albuns e datas de lancamentos");
+         printf("\n4- Membros");
+         printf("\n5- Top 10 musicas mais tocadas");
+         printf("\n6- Premios ja conquistados pela banda");
+         printf("\n7- Turnes mundiais");
+         printf("\n8- Jogo da velha");
+         printf("\n9- Quiz sobre a banda");
+         printf("\n10-sair");
+         printf("\n\n- Saiba mais sobre a banda Metallica, escolha uma opcao:");
+         scanf("%d",&opcao);
+
+         switch(opcao)
+        {
+             case 1:
+             {
+                   printf("\n O Metallica foi formado em Los Angeles, California, no fim de 1981 quando o baterista Lars Ulrich colocou um anuncio num jornal de Los Angeles que dizia Baterista a procura de outros musicos de metal para jamcom Tygers of Pan Tang, Diamond Head e Iron Maiden. Os guitarristas James Hetfield e Hugh Tanner de Leather Charm responderam ao anuncio. Embora ele nao tivesse formado uma banda, Ulrich perguntou para o fundador da Metal Blade Records Brian Slagel se ele podia gravar uma cancao para a proxima compilacao da gravadora intitulada Metal Massacre. Slagel aceitou e Ulrich recrutou Hetfield para cantar e tocar baixo em 1981.");
+                   getch();
+                   break;
+             }
+            case 2:
+            {
+
+                   printf ("\n Em entrevista a NPR, o baterista Lars Ulrich explicou como tudo se deu. Aconteceu na primavera de 1981, quando Ulrich foi para Sao Francisco, onde conheceu umas pessoas locais.\n\n Uma dessas pessoas, Ron Quintana, eh importante para a historia. Ele comentou com Ulrich sobre o interesse que tinha em criar sua propria fanzine (uma especie de revista nao oficial produzida por fas que objetivam apenas compartilhar seus gostos e interesses). Lars explicou que ele tinha uma duvida:\n\n Ele me perguntou se deveria chamar a publicacao de Metallica ou de Metal Mania. Entao eu sugeri que chamasse de Metal Mania.\n\n Mas e Ron?\n\n Ok, dito isso, entende-se que Lars roubou o nome para sua banda. Baseado nisso, a Metal Core Fanzine questionou Ron, que tambem trabalha como DJ, sobre o que achava da situacao toda. Sera ele guarda rancor do baterista pelo o que aconteceu ha 30 anos?\n\n Ele respondeu:\n\n Fiquei feliz por dar o nome para ele. Eu era maniaco por metal, e por isso mantive o nome Metal Mania. Inclusive, eu nomeei a fanzine antes mesmo de ele ter usado o nome Metallica. Isso justamente pelo fato de que não queria usar aquele nome.");
+                   getch();
+                   break;
+             }
+
+           case 3:
+             {
+
+                   printf ("\n Albuns:\n\n\tHardwired... to Self-Destruct\n\tGravadora: Blackened recordings\n\tLancamento: 2016\n\n\tThrough The Never\n\tGravadora: Blackened Recordings\n\tLancamento: 2013\n\n\tFreeze 'Em All\n\tGravadora: Blackened Recordings\n\tLancamento: 2013\n\n\tBeyond Magnetic (EP)\n\tGravadora: Warner Music\n\tLancamento: 2011\n\n\tDevil's Dance\n\tGravadora: Radar Records\n\tLancamento: 2008\n\n\tDeath Magnetic\n\tGravadora: Warner Bros. \n\tLancamento: 2008\n\n\tThe Unnamed Feeling\n\tGravadora: Vertigo Records\n\tLancamento: 2004\n\n\tSome Kind Of Monster (EP) \n\tGravadora: Warner Music\n\tLancamento: 2004\n\n\tSt. Anger\n\tGravadora: Elektra Records\n\tLancamento: 2003\n\n\tBlack Album\n\tGravadora: Ejas\n\tLancamento: 2002\n\n\tGarage Inc. \n\tGravadora: Elektra Records\n\tLancamento: 1998\n\n\tThe Memory Remains\n\tGravadora: Elektra Records / Vertigo Records / Sony Music\n\tLancamento: 1997\n\n\tFuel\n\tGravadora: Elektra Records / Vertigo Records / Sony Music \n\tLancamento: 1997\n\n\tLoad\n\tGravadora: Elektra Records \n\tLancamento: 1996\n\n\tMetallica\n\tGravadora: Elektra Records\n\tLancamento: 1991\n\n\t...And Justice for All\n\tGravadora: Elektra Records \n\tLancamento: 1988\n\n\tMaster of Puppets\n\tGravadora: Elektra Records\n\tLancamento: 1986\n\n\tRide The Lightning\n\tGravadora: Elektra Records\n\tLancamento: 1984\n\n\tCreeping Death\n\tGravadora: Music For Nations\n\tLancamento: 1984\n\n\tKill 'Em All\n\tGravadora: Megaforce Records\n\tLancamento: 1983\n\n\tJump In The Fire\n\tGravadora: Music For Nations \n\tLancamento: 1983\n\n\tMetal Up Your Ass\n\tGravadora: Auto-Production\n\tLancamento: 1982\n\n Albuns com participacoes:\n\n\tLulu - Metallica & Lou Reed\n\tGravadora: Universal Music \n\tLancamento: 2011\n\n Albuns de melhores hits:\n\n\tGreatest Hits (part Il) \n\tGravadora: Vertigo Records\n\tLancamento: 2008)\n\n\tGreatest Hits (part I) \n\tGravadora: Vertigo Records \n\tLancamento: 2008\n\n Albuns ao vivo:\n\n\tS&M (Live) \n\tGravadora: Elektra Records\n\tLancamento: 1999\n\n\tLive Shit : Binge And Purge\n\tGravadora: Vertigo Records\n\tLancamento: 1993\n\n\t");
+                   getch();
+                   break;
+             }
+           case 4:
+           {
+
+                   printf ("\nMembros atuais:\n\n\t James Hetfield\n\t Guitarra e Voz - Desde 1981\n\n\t Lars Ulrich\n\t Bateria - Desde 1981\n\n\t Kirk Hammett\n\t Guitarra solo - Desde 1983\n\n\t Robert Trujillo\n\t Baixista - Desde 2003\n\nEx-membros:\n\n\t Dave Mustaine\n\t Baixista - De 1982 a 1983\n\n\t Cliff Burton\n\t Baixista - De 1982 a 1986\n\n\t Jason Newsted\n\t Baixista - De 1986 a 2001\n\n\t Ron McGovney\n\t Baixista - De 1982 a 1982\n\n\t Bob Rock\n\t Guitarra solo - De 2001 a 2003\n");
+                   getch();
+                   break;
+            }
+            case 5:
+           {
+
+                   printf ("\nTOP 10:\n\n\t1- One\n\tAlbum: ...And Justice for All - 1988\n\n\t2- Master of Puppets\n\tAlbum: Master of Puppets - 1986\n\n\t3- Enter Sandman\n\tAlbum: Metallica - 1991\n\n\t4- Fade to Black\n\tAlbum: Ride the Lightning - 1984\n\n\t5- Battery\n\tAlbum:  Master of Puppets - 1986\n\n\t6- Seek and Destroy\n\tAlbum: Metal Up Your Ass - 1982\n\n\t7- Fuel\n\tAlbum: Fuel - 1997\n\n\t8- Creeping Death\n\tAlbum: Ride the Lightning - 1984\n\n\t9- The Unforgiven\n\tAlbum: Metallica - 1991\n\n\t10- Nothing Else Matters\n\tAlbum: Metallica - 1991\n");
+                   getch();
+                   break;
+            }
+            case 6:
+           {
+
+                   printf ("\nAmerican Music Awards:\n\n\t1993 - Artista Favorito de Heavy Metal/ Hard Rock\n\n\t1997 - Artista Favorito de Heavy Metal/ Hard Rock\n\nBillboard Music Awards:\n\n\t1997 - Artista do Ano de Rock and Roll\n\n\t1999 - Album de Catalogo do Ano\n\n\t1999 - Artista de Catalogo do ano\n\nGrammy Awards:\n\n\t1990 - (One) Melhor Performance de Metal\n\n\t1991 - (Stone Cold Crazy) Melhor Performance de Metal\n\n\t 1992 - (Metallica) Melhor Performance de Metal\n\n\t1999 - (Better Than You) Melhor Performance de Metal\n\n\t2000 - (Whiskey in The Jar) Melhor Performance de Hard Rock\n\n\t2001 - (The Call of Ktulu) Melhor Performance de Rock Instrumental\n\n\t2004 - (St. Anger) Melhor Performance de Metal\n\n\t2009 - (My Apocalypse) Melhor Performance de Rock Instrumental\n\n\t2009 - (Death Magnetic) Melhor Embalagem de Disco\n\nIndependent Spirit Awards:\n\n\t2005 - (Some kind of Monster) Melhor Documentario\n\nJuno Awards:\n\n\t t2005 - (Some kind of Monster) Jack Richardson Produtor do Ano\n\nKerrang! Awards:\n\n\t2003 - Melhor Banda Internacional\n\t 2003 - Melhor Banda do Planeta\n\n\t2007 - Melhor Banda do Planeta\n\n\t2008 - Melhor Banda do Planeta\n\n\t2008 - Premio Inspiracao\n\n\t2009 - (Death Magnetic) Melhor Album\n\n\t2011 - Melhor Banda do Planeta\n\n\t2012 - Melhor Banda do Planeta\n\nMTV Video Music Awards:\n\n\t1992 - (Enter Sandman) Melhor Video de Metal\n\n\t1996 - (Until it Sleeps) Melhor Video de Metal\n\nRadio Music Awards:\n\n\t2005 - Artista do ano/Ativo e Alternativo\n\n\t2005 - Artista do Ano/Rock\n\nTop In Rock Awards:\n\n\t 2008 Melhor Banda de Metal\n\n\t 2009 Melhor Banda de Metal\n");
+                   getch();
+                   break;
+            }
+            case 7:
+           {
+
+                   printf ("\nTurnes Mundiais:\n\n\tDamage, Inc. Tour (1986-1987)\n\n\tDamaged Justice (1988-1989)\n\n\tWherever We May Roam Tour (1991-1992)\n\n\tNowhere Else to Roam (1993)\n\n\tMadly in Anger with the World Tour (2003-2004)\n\n\tEscape from the Studio 06 e World Magnetic Tour (2008-2010)\n");
+                   getch();
+                   break;
+            }
+            case 8:
+           {
+
+                   do{
+            cont_jogadas = 1;
+            for(i=0; i<=2; i++){
+                for(j=0; j<=2; j++){
+                     casas[i][j] = ' ';
+            }
+        }
+
+        do{
+             tabuleiro(casas);
+            if(vez%2==0){
+                printf("Jogador X\n");
+            }else{
+                printf("Jogador O\n");
+            }
+            printf("Digite a linha: ");
+            scanf("%i", &l);
+            printf("Digite a coluna: ");
+            scanf("%i", &c);
+            if(l < 1 || c < 1 || l > 3 || c > 3)
+            {
+                l=0;
+                c=0;
+            }
+            else if(casas[l-1][c-1] != ' ')
+            {
+                l=0;
+                c=0;
+            }
+            else
+            {
+                if(vez%2==0)
+                {
+                    casas[l-1][c-1]='X';
+                }
+                else
+                {
+                    casas[l-1][c-1]='O';
+                }
+                vez++;
+                cont_jogadas++;
+            }
+
+                if (casas [0][0]=='X' && casas [0][1]=='X' && casas [0][2]=='X'){cont_jogadas = 11;}
+                if (casas [1][0]=='X' && casas [1][1]=='X' && casas [1][2]=='X'){cont_jogadas = 11;}
+                if (casas [2][0]=='X' && casas [2][1]=='X' && casas [2][2]=='X'){cont_jogadas = 11;}
+                if (casas [0][0]=='X' && casas [1][0]=='X' && casas [2][0]=='X'){cont_jogadas = 11;}
+                if (casas [0][1]=='X' && casas [1][1]=='X' && casas [2][1]=='X'){cont_jogadas = 11;}
+                if (casas [0][2]=='X' && casas [1][2]=='X' && casas [2][2]=='X'){cont_jogadas = 11;}
+
+                //diagonais
+                if (casas [0][0]=='X' && casas [1][1]=='X' && casas [2][2]=='X'){cont_jogadas = 11;}
+                if (casas [0][2]=='X' && casas [1][1]=='X' && casas [2][0]=='X'){cont_jogadas = 11;}
+
+
+                if (casas [0][0]=='O' && casas [0][1]=='O' && casas [0][2]=='O'){cont_jogadas = 12;}
+                if (casas [1][0]=='O' && casas [1][1]=='O' && casas [1][2]=='O'){cont_jogadas = 12;}
+                if (casas [2][0]=='O' && casas [2][1]=='O' && casas [2][2]=='O'){cont_jogadas = 12;}
+                if (casas [0][0]=='O' && casas [1][0]=='O' && casas [2][0]=='O'){cont_jogadas = 12;}
+                if (casas [0][1]=='O' && casas [1][1]=='O' && casas [2][1]=='O'){cont_jogadas = 12;}
+                if (casas [0][2]=='O' && casas [1][2]=='O' && casas [2][2]=='O'){cont_jogadas = 12;}
+
+                //diagonais
+                if (casas [0][0]=='O' && casas [1][1]=='O' && casas [2][2]=='O'){cont_jogadas = 12;}
+                if (casas [0][2]=='O' && casas [1][1]=='O' && casas [2][0]=='O'){cont_jogadas = 12;}
+
+            }while(cont_jogadas<=9);
+            tabuleiro(casas);
+            if(cont_jogadas==10){
+                printf("Jogo empatado!\n");
+            }if(cont_jogadas==11){
+                printf("Vencedor X\n");
+            }if (cont_jogadas==12){
+                printf("Vencedor O\n");
+            }
+
+            printf("Deseja jogar novamente? [S-N]\n");
+            scanf("%s", &resposta_jogoDaVelha);
+
+     }while(resposta_jogoDaVelha=='s');
+
+     if(resposta_jogoDaVelha=='n'){
+
+         break;
+     }
+
+}
+
+
+            case 9:
+
+                       {
+                          struct Quiz quiz;
+               system("cls");
+               printf("Ola, seja bem vindo ao quiz do Metallica!\n\nPor favor insira seu nome: " );
+               scanf("%s", &nome);
+
+                   strcpy(quiz.perguntas[0].texto,"\n\n1- Quantos anos o Metallica completara em 2018?\n\na)32\nb)35\nc)37");
+                       quiz.perguntas[0].resposta_correta = 'C';
+                       quiz.perguntas[0].pontos = 1;
+
+                   strcpy(quiz.perguntas[1].texto,"\n\n2- Qual o integrante mais velho da banda?\n\na)Kirk Hammet\nb)Lars Ulrich\nc)James Hetfield");
+                       quiz.perguntas[1].resposta_correta = 'A';
+                       quiz.perguntas[1].pontos = 1;
+
+                   strcpy(quiz.perguntas[2].texto,"\n\n3- Como foi que Cliff Burton morreu?\na)Suicidio\nb)Acidente de onibus\nc)Envenenamento");
+                       quiz.perguntas[2].resposta_correta = 'B';
+                       quiz.perguntas[2].pontos = 1;
+
+                    strcpy(quiz.perguntas[3].texto,"\n\n4- Em que ano foi lancado o primeiro album do Metallica?\na)1981\nb)1982\nc)1983");
+                       quiz.perguntas[3].resposta_correta = 'C';
+                       quiz.perguntas[3].pontos = 1;
+
+                    strcpy(quiz.perguntas[4].texto,"\n\n5- Em qual ano Metallica lancou seu quarto album?\na)1985\nb)1988\nc)1990");
+                       quiz.perguntas[4].resposta_correta = 'B';
+                       quiz.perguntas[4].pontos = 1;
+
+                    strcpy(quiz.perguntas[5].texto,"\n\n6- Qual musica do Metallica apresenta, logo ao inicio, som de batimentos cardiacos?\na)That Was Just Your Life\nb)Nothing else matters\nc)Battery");
+                       quiz.perguntas[5].resposta_correta = 'A';
+                       quiz.perguntas[5].pontos = 1;
+
+                    strcpy(quiz.perguntas[6].texto,"\n\n7- Qual das seguintes musicas nao foi tocada durante o concerto Symphony & Metallica, em 1999?\na)Master of Puppets\nb)Fade to Black\nc)No Leaf Clover");
+                       quiz.perguntas[6].resposta_correta = 'B';
+                       quiz.perguntas[6].pontos = 1;
+
+                    strcpy(quiz.perguntas[7].texto,"\n\n8- Qual o nome do primeiro baixista do Metallica?\na)Carlos Santana\nb)Dave Mustaine\nc)Bob Rock");
+                       quiz.perguntas[7].resposta_correta = 'B';
+                       quiz.perguntas[7].pontos = 1;
+
+                    strcpy(quiz.perguntas[8].texto,"\n\n9- Em tributo a quem foi gravada a musica To live is to die?\na)Cliff Burton\nb)James Hetfield\nc)Lars Ulrich");
+                       quiz.perguntas[8].resposta_correta = 'A';
+                       quiz.perguntas[8].pontos = 1;
+
+                    strcpy(quiz.perguntas[9].texto,"\n\n10- Antes de Kirk Hammet entrar na banda, qual era o nome de sua antiga banda?\na)Iron Maiden\nb)Black Sabbath\nc)Exodus");
+                       quiz.perguntas[9].resposta_correta = 'C';
+                       quiz.perguntas[9].pontos = 1;
+
+
+
+
+   for(i=0;i<10;i++) {
+      printf("%s \n\nEscolha uma alternativa: ",quiz.perguntas[i].texto);
+      quiz.resposta[i] = getche();
+   }
+   for(i=0;i<11;i++) {
+      if (quiz.perguntas[i].resposta_correta == toupper(quiz.resposta[i]))
+         totalperguntas = totalperguntas + quiz.perguntas[i].pontos;
+
+         totalpontos= totalperguntas*10;
+   }
+   printf("\n\nParabens %s, voce acertou %i questoes e acumulou %i pontos. \n\n",nome, totalperguntas,*ptotalpontos);
+   system("pause");
+  }
+        }
+
+   system ("PAUSE");
+
+}
+    }
